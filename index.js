@@ -65,7 +65,7 @@ async function generatePost(prompt, imageUrl) {
 }
 
 // Запуск постов по расписанию
-schedule.scheduleJob(`40 17 * * *`, () => generatePost(horoscopePrompt, horoscopeImage)); // 8:00 - Гороскоп
+schedule.scheduleJob(`0 8 * * *`, () => generatePost(horoscopePrompt, horoscopeImage)); // 8:00 - Гороскоп
 schedule.scheduleJob('30 12 * * *', () => generatePost(signsPrompt, signsImage)); // 12:30 - Приметы
 schedule.scheduleJob('00 18 * * *', () => generatePost(prohibitionsPrompt, prohibitionsImage)); // 18:00 - Запреты
 schedule.scheduleJob('30 21 * * *', () => generatePost(tipsPrompt, tipsImage)); // 21:30 - Советы
@@ -74,5 +74,5 @@ schedule.scheduleJob('30 21 * * *', () => generatePost(tipsPrompt, tipsImage)); 
 bot.on('message', (msg) => {
     const chatId = msg.chat.id;
     bot.sendMessage(chatId, 'Пост генерируется, подождите...');
-    generatePost(prompt1); 
+    generatePost(horoscopePrompt, horoscopeImage); 
 });
