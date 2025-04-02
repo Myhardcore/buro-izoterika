@@ -65,10 +65,10 @@ async function generatePost(prompt, imageUrl) {
 }
 
 // Запуск постов по расписанию
-schedule.scheduleJob(`0 8 * * *`, () => generatePost(horoscopePrompt, horoscopeImage)); // 8:00 - Гороскоп
-schedule.scheduleJob('30 12 * * *', () => generatePost(signsPrompt, signsImage)); // 12:30 - Приметы
-schedule.scheduleJob('10 18 * * *', () => generatePost(prohibitionsPrompt, prohibitionsImage)); // 18:00 - Запреты
-schedule.scheduleJob('30 21 * * *', () => generatePost(tipsPrompt, tipsImage)); // 21:30 - Советы
+schedule.scheduleJob(`0 8 * * *`, { tz: 'Europe/Moscow' }, () => generatePost(horoscopePrompt, horoscopeImage)); // 8:00 - Гороскоп
+schedule.scheduleJob('30 12 * * *', { tz: 'Europe/Moscow' }, () => generatePost(signsPrompt, signsImage)); // 12:30 - Приметы
+schedule.scheduleJob('28 18 * * *', { tz: 'Europe/Moscow' }, () => generatePost(prohibitionsPrompt, prohibitionsImage)); // 18:00 - Запреты
+schedule.scheduleJob('30 21 * * *', { tz: 'Europe/Moscow' }, () => generatePost(tipsPrompt, tipsImage)); // 21:30 - Советы
 
 // Генерация по запросу пользователя
 bot.on('message', (msg) => {
