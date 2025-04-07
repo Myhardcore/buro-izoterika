@@ -2,7 +2,7 @@ const subscribeUrl = 'https://t.me/+U483ZMPwLPlhZjJi';
 const signsImage = 'https://i.ibb.co/5hwnWc08/photo-2024-01-16-18-18-14.jpg';
 const getFormattedDate = require('../helpers/helper');
 
-const signsPrompt = {
+const signsPrompt = () => ({
     role: "user",
     content: 
     `
@@ -13,7 +13,7 @@ const signsPrompt = {
 
     так как я использую parseMode: HTML, то воспользуемся html-тегами (например <b>bold</b>, <i>italic</i>), но не используй для переноса строк <br>
     `
-};
+});
 
 module.exports = signsPrompt;
 module.exports.signsImage = signsImage;

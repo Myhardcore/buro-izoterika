@@ -1,7 +1,7 @@
 const subscribeUrl = 'https://t.me/+U483ZMPwLPlhZjJi';
 const tipsImage = 'https://i.ibb.co/7J7FnjKX/photo-2024-01-16-18-19-05.jpg';
 
-const tipsPrompt = {
+const tipsPrompt = () => ({
     role: "user",
     content: 
     `
@@ -13,7 +13,7 @@ const tipsPrompt = {
 
     так как я использую parseMode: HTML, то воспользуемся html-тегами (например <b>bold</b>, <i>italic</i>), но не используй для переноса строк <br>
     `
-};
+});
 
 module.exports = tipsPrompt;
 module.exports.tipsImage = tipsImage;

@@ -2,7 +2,7 @@ const subscribeUrl = 'https://t.me/+U483ZMPwLPlhZjJi';
 const horoscopeImage = 'https://i.ibb.co/nqfv9MHY/photo-2024-01-16-19-02-46.jpg';
 const getFormattedDate = require('../helpers/helper');
 
-const horoscopePrompt = {
+const horoscopePrompt = () => ({
     role: "user",
     content: 
     `
@@ -15,7 +15,7 @@ const horoscopePrompt = {
 
     так как я использую parseMode: HTML, то воспользуемся html-тегами (например <b>bold</b>, <i>italic</i>), но не используй для переноса строк <br>
     `
-};
+});
 
 module.exports = horoscopePrompt;
 module.exports.horoscopeImage = horoscopeImage;
