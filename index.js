@@ -42,6 +42,7 @@ async function generatePost(prompt, imageUrl) {
     try {
         const response = await fetch(url, options);
         const data = await response.json();
+        console.log(data.detail);
 
         if (data.choices && data.choices.length > 0) {
             const messageContent = data.choices[0].message?.content.split('</think>\n\n')[1];
